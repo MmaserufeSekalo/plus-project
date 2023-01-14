@@ -72,9 +72,9 @@ img {
     margin: 10px;
 }
 .daily:hover{
-   border: 1px solid beige;
-   border-radius: 10px;
-   background-color: aliceblue; 
+   border: 1px solid rgb(220, 234, 245);
+   border-radius: 5px;
+   background-color: rgb(225, 236, 246); 
 }
 .forecast-icon{
     width: 50px;
