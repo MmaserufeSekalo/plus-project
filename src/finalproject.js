@@ -25,28 +25,42 @@ dayElement.innerHTML = day;
 timeElement.innerHTML = time;
 
 function displayForecast() {
-  let forecastElement = document.querySelector(".weather-forecast");
-  forecastElement.innerHTML = `
-  <div class="row">
-                    <div class="col">
-                        <div class="daily">
-                        <div class="forecast-day">Thursday</div>
-                        <div>
-                            <img
-                            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-                            alt=""
-                            class="forecast-icon"
-                            />
-                            <div class="forecast-temperature">
-                            <span class="max-temp">29</span>
-                            <span class="min-temp">10</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>`;
+  
+    let forecastElement = document.querySelector(".weather-forecast");
+  
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday"];
+  
+    let forecastHTML = `<div class="row">`;
+  
+    days.forEach(function (day) {
+      forecastHTML =
+        forecastHTML +
+        `
+    
+      <div class="col">
+        <div class="daily">
+          <div class="forecast-day">${day}</div>
+          <div>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              alt=""
+              class="forecast-icon"
+            />
+            <div class="forecast-temperature">
+              <span class="max-temp">29</span>
+              <span class="min-temp">10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+  `;
+    });
+    forecastHTML = forecastHTML + ` </div>`;
+    forecastElement.innerHTML = forecastHTML;
+  
 }
-displayForecast()
+displayForecast();
 
 function displayTemperature(position) {
   let cityElement = document.querySelector("#current-location");
