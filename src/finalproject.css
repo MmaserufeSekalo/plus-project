@@ -68,3 +68,24 @@ img {
 .active {
   font-weight: 700;
 }
+.weather-forecast{
+    margin: 10px;
+}
+.daily:hover{
+   border: 1px solid beige;
+   border-radius: 10px;
+   background-color: aliceblue; 
+}
+.forecast-icon{
+    width: 50px;
+}
+.max-temp{
+    font-weight: 600;
+}
+.min-temp{
+    font-weight: 400;
+    opacity: 60%;
+}
+.forecast-day{
+    font-weight: 600;
+}
