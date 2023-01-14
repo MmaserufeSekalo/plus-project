@@ -37,6 +37,7 @@ function displayTemperature(position) {
   humidityElement = position.data.temperature.humidity;
   windElement.innerHTML = Math.round(position.data.wind.speed);
   iconElement.setAttribute("src", position.data.condition.icon_url);
+  iconElement.setAttribute("alt", position.data.condition.description);
 
   celsiusTemperature = position.data.temperature.current;
 }
