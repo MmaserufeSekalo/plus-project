@@ -24,6 +24,30 @@ let timeElement = document.querySelector("#time");
 dayElement.innerHTML = day;
 timeElement.innerHTML = time;
 
+function displayForecast() {
+  let forecastElement = document.querySelector(".weather-forecast");
+  forecastElement.innerHTML = `
+  <div class="row">
+                    <div class="col">
+                        <div class="daily">
+                        <div class="forecast-day">Thursday</div>
+                        <div>
+                            <img
+                            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                            alt=""
+                            class="forecast-icon"
+                            />
+                            <div class="forecast-temperature">
+                            <span class="max-temp">29</span>
+                            <span class="min-temp">10</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>`;
+}
+displayForecast()
+
 function displayTemperature(position) {
   let cityElement = document.querySelector("#current-location");
   let temperatureElement = document.querySelector("#current-temp");
@@ -75,8 +99,8 @@ function fahChange(event) {
   let imperialTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = imperialTemp;
-  let activeClass =document.querySelector("#metric")
-  activeClass.classList.add("#active")
+  let activeClass = document.querySelector("#metric");
+  activeClass.classList.add("#active");
 }
 let celsiusTemperature = null;
 let fah = document.querySelector("#imperial");
