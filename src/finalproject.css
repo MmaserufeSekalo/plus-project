@@ -47,3 +47,19 @@ img {
   max-width: 600px;
   margin-left: 200px;
 }
+.description ::first-letter {
+  color: rebeccapurple;
+}
+#imperial {
+  color: rgb(77, 61, 61);
+  text-decoration: none;
+}
+#metric {
+  color: rgb(77, 61, 61);
+  text-decoration: none;
+}
+#imperial:hover{
+    cursor: default;
+}
+#metric:hover{
+    cursor: default;}
