@@ -1,0 +1,49 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background: #e7eaf6;
+}
+h1 {
+  margin-left: 10px;
+  font-weight: 600;
+  opacity: 80%;
+  margin-bottom: 0;
+}
+form {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-left: 120px;
+  margin-bottom: 20px;
+}
+.app-wrap {
+  color: rgb(77, 61, 61);
+  max-width: 600px;
+  border: 1px solid rgb(130, 66, 66);
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.latest-update {
+  margin-top: 0;
+  font-size: 16px;
+  margin-left: 10px;
+}
+#current-temp {
+  font-size: 55px;
+  position: relative;
+  font-weight: 600;
+}
+.units {
+  position: relative;
+  right: 10px;
+  bottom: -10px;
+  font-size: 15px;
+}
+img {
+  width: 80px;
+}
+.footer {
+  max-width: 600px;
+  margin-left: 400px;
+}

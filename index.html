@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/finalproject.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="app-wrap">
+        <form id="city-input">
+          <input
+            type="text"
+            placeholder="Type a city"
+            class="form-control-sm" id="search-input"
+          />
+          <input type="submit" value="Search" class="btn btn-primary btn-sm" />
+          <input type="submit" value="Current" class="btn btn-success btn-sm"  id="search-input"/>
+        </form>
+        <h1>
+          <div class="header">Polokwane</div>
+        </h1>
+
+        <h2 class="latest-update" id="latest-update">
+          <span>Last updated:</span> <br />
+          <span class="date" id="date">Thursday</span>
+          <span class="time" id="time">18:24</span>
+          <br />
+          <span class="description" id="description">Sunny</span>
+        </h2>
+
+        <div class="weather-data">
+          <div class="row">
+            <div class="row">
+              <div class="col-2">
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                  alt="Sunny" id="current-icon"
+                />
+              </div>
+              <div class="col-2" id="current-temp">27</div>
+
+              <div class="col-2">
+                <div class="units">
+                  <span class="unit" id="metric">°C</span>
+                  <span class="imperial" id="imperial">|°F</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <span class="humidity"
+                  >Himidity: <span id="current-humidity"> 40 </span
+                  ><span>%</span></span
+                >
+                <br />
+                <span class="wind-speed">
+                  Wind Speed: <span id="wind-speed">4</span> <span>Km/H</span>
+                </span>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <small
+          ><a
+            href="https://github.com/MmaserufeSekalo/shecodes-plus-final-project"
+            target="_blank"
+            >Open-sourced</a
+          >
+          by, Mmaserufe Sekalo</small
+        >
+      </div>
+    </div>
+
+    <script src="src/finalproject.js"></script>
+  </body>
+</html>
