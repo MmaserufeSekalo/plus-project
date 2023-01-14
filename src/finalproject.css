@@ -51,15 +51,20 @@ img {
   color: rebeccapurple;
 }
 #imperial {
-  color: rgb(77, 61, 61);
+  color: rgb(78, 101, 205);
   text-decoration: none;
 }
 #metric {
-  color: rgb(77, 61, 61);
+  color: rgb(78, 101, 202);
   text-decoration: none;
 }
-#imperial:hover{
-    cursor: default;
+#imperial:hover {
+  cursor: default;
 }
-#metric:hover{
-    cursor: default;}
+#metric:hover {
+  cursor: default;
+}
+
+.active {
+  font-weight: 700;
+}

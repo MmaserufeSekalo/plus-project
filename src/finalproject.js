@@ -74,6 +74,8 @@ function fahChange(event) {
   let imperialTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = imperialTemp;
+  let activeClass =document.querySelector("#metric")
+  activeClass.classList.add("#active")
 }
 let celsiusTemperature = null;
 let fah = document.querySelector("#imperial");
