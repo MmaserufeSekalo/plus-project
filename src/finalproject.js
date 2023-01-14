@@ -24,18 +24,18 @@ let timeElement = document.querySelector("#time");
 dayElement.innerHTML = day;
 timeElement.innerHTML = time;
 
-function displayForecast() {
-  
-    let forecastElement = document.querySelector(".weather-forecast");
-  
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday"];
-  
-    let forecastHTML = `<div class="row">`;
-  
-    days.forEach(function (day) {
-      forecastHTML =
-        forecastHTML +
-        `
+function displayForecast(forecast) {
+  console.log(forecast.data);
+  let forecastElement = document.querySelector(".weather-forecast");
+
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
     
       <div class="col">
         <div class="daily">
@@ -55,14 +55,14 @@ function displayForecast() {
       </div>
    
   `;
-    });
-    forecastHTML = forecastHTML + ` </div>`;
-    forecastElement.innerHTML = forecastHTML;
-  
+  });
+  forecastHTML = forecastHTML + ` </div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
 
 function displayTemperature(position) {
+  lon = position.data.coordinates.longitude;
+  lat = position.data.coordinates.latitude;
   let cityElement = document.querySelector("#current-location");
   let temperatureElement = document.querySelector("#current-temp");
   let descriptionElement = document.querySelector("#description");
@@ -81,11 +81,15 @@ function displayTemperature(position) {
 }
 function searchCity(event) {
   event.preventDefault();
-  let newCity = document.querySelector("#search").value;
+  newCity = document.querySelector("#search").value;
   let keys = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
   let searchApi = `https://api.shecodes.io/weather/v1/current?query=${newCity}&key=${keys}`;
   axios.get(searchApi).then(displayTemperature);
 }
+
+let newCity = null;
+let lat = null;
+let lon = null;
 
 let searchButton = document.querySelector("#search-input");
 searchButton.addEventListener("click", searchCity);
@@ -127,3 +131,7 @@ function celChange(event) {
 }
 let celsiusChange = document.querySelector("#metric");
 celsiusChange.addEventListener("click", celChange);
+
+let forecastKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
+let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${forecastKey}`;
+axios.get(forecastUrl).then(displayForecast);
