@@ -25,7 +25,7 @@ dayElement.innerHTML = day;
 timeElement.innerHTML = time;
 
 function displayForecast(forecast) {
-  console.log(forecast.data);
+    console.log(forecast)
   let forecastElement = document.querySelector(".weather-forecast");
 
   let days = ["Monday", "Tuesday", "Wednesday", "Thursday"];
@@ -59,6 +59,7 @@ function displayForecast(forecast) {
   forecastHTML = forecastHTML + ` </div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+displayForecast();
 
 function displayTemperature(position) {
   lon = position.data.coordinates.longitude;
@@ -66,18 +67,19 @@ function displayTemperature(position) {
   let cityElement = document.querySelector("#current-location");
   let temperatureElement = document.querySelector("#current-temp");
   let descriptionElement = document.querySelector("#description");
-  let humidityElement = document.querySelector("#humidity");
+  let humidityElement = document.querySelector("#current-humidity");
   let windElement = document.querySelector("#wind-speed");
   let iconElement = document.querySelector("#current-icon");
   cityElement.innerHTML = position.data.city;
   temperatureElement.innerHTML = Math.round(position.data.temperature.current);
   descriptionElement.innerHTML = position.data.condition.description;
-  humidityElement = position.data.temperature.humidity;
+  humidityElement.innerHTML = position.data.temperature.humidity;
   windElement.innerHTML = Math.round(position.data.wind.speed);
   iconElement.setAttribute("src", position.data.condition.icon_url);
   iconElement.setAttribute("alt", position.data.condition.description);
 
   celsiusTemperature = position.data.temperature.current;
+  displayForecast(position.data)
 }
 function searchCity(event) {
   event.preventDefault();
@@ -133,5 +135,5 @@ let celsiusChange = document.querySelector("#metric");
 celsiusChange.addEventListener("click", celChange);
 
 let forecastKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
-let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${forecastKey}`;
+let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${lat}&lon=${lon}&key=${forecastKey}&units=metric`;
 axios.get(forecastUrl).then(displayForecast);
